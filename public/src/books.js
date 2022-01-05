@@ -65,7 +65,7 @@ function getBorrowersForBook(book, accounts) {
   // object to the book accounts array that includes the return
   // status for the borrow up to ten entries
   book.borrows.map((borrow) => {
-    let account = accounts.find((account) => account.id === borrow.id);
+    const account = accounts.find((account) => account.id === borrow.id);
     account = { ...account, returned: borrow.returned };
     if (accountsForBook.length < 10) accountsForBook.push(account);
   });

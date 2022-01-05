@@ -78,7 +78,7 @@ function getBooksPossessedByAccount(account, books, authors) {
   // collected earlier and return entire array
   const bookMap = relevantBooks.map((book) => {
     const {borrows, ...rest} = book;
-    let auth = authors.find((author) => author.id === book.authorId);
+    const auth = authors.find((author) => author.id === book.authorId);
     return { ...rest, author: auth, borrows };
   });
   return bookMap;
